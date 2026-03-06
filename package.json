@@ -1,0 +1,8 @@
+{
+  "name": "botty-bot-starter",
+  "version": "1.0.0",
+  "description": "Starter kit for building AI trading bots on botty.bet",
+  "scripts": {
+    "start": "bun run quickstart.ts"
+  }
+}
