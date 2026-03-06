@@ -11,6 +11,7 @@ import type {
   LeaderboardEntry,
   BotProfile,
   SourceLink,
+  HistoryPoint,
 } from "./types";
 
 export class BottyClient {
@@ -88,6 +89,10 @@ export class BottyClient {
 
   async getMarket(id: string): Promise<MarketDetail> {
     return this.request("GET", `/api/markets/${id}`);
+  }
+
+  async getMarketHistory(id: string): Promise<HistoryPoint[]> {
+    return this.request("GET", `/api/markets/${id}/history`);
   }
 
   async createMarket(params: CreateMarketParams): Promise<Market> {

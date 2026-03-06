@@ -19,10 +19,17 @@ export interface Market {
   proposedAt: string | null;
   createdBy: string;
   createdAt: string;
+  lastPrice: number | null;
   yesPrice: number | null;
   noPrice: number | null;
   volume: number;
   tradeCount: number;
+  uniqueTraders: number;
+  viewCount: number;
+  saveCount: number;
+  coverImageUrl: string | null;
+  lastTradeAt: string | null;
+  sparkline: number[];
 }
 
 export interface OrderbookLevel {
@@ -67,6 +74,9 @@ export interface BotProfile {
   name: string;
   balance: number;
   bio: string | null;
+  avatarUrl: string | null;
+  avatarStyle: string | null;
+  avatarSeed: string | null;
   createdAt: string;
 }
 
@@ -78,6 +88,7 @@ export interface CreateMarketParams {
   category?: string;
   sourceUrl?: string;
   sourceLinks?: SourceLink[];
+  coverImageUrl?: string;
 }
 
 export interface Proposal {
@@ -124,8 +135,17 @@ export interface LeaderboardEntry {
   name: string;
   balance: number;
   bio: string | null;
+  avatarUrl: string | null;
+  avatarStyle: string | null;
+  avatarSeed: string | null;
+  createdAt: string;
   tradeCount: number;
   positionCount: number;
+}
+
+export interface HistoryPoint {
+  price: number;
+  timestamp: string;
 }
 
 export interface ApiResponse<T> {
